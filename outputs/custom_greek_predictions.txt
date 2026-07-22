@@ -1,0 +1,16 @@
+file,prediction,expected,correct
+alpha_01.jpg,alpha,alpha,True
+alpha_02.jpg,alpha,alpha,True
+alpha_03.jpg,alpha,alpha,True
+alpha_04.jpg,alpha,alpha,True
+alpha_05.jpg,alpha,alpha,True
+beta_01.jpg,gamma,beta,False
+beta_02.jpg,beta,beta,True
+beta_03.jpg,beta,beta,True
+beta_04.jpg,beta,beta,True
+beta_05.jpg,beta,beta,True
+gamma_01.jpg,gamma,gamma,True
+gamma_02.jpg,gamma,gamma,True
+gamma_03.jpg,gamma,gamma,True
+gamma_04.jpg,beta,gamma,False
+gamma_05.jpg,gamma,gamma,True

@@ -1,0 +1,19 @@
+Fixed Gabor MNIST model:
+FixedGaborNetwork(
+  (conv1): Conv2d(1, 10, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), bias=False)
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (dropout): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=500, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=10, bias=True)
+)
+
+Frozen parameters: 490
+Trainable parameters: 30580
+conv1 requires_grad: False
+
+epoch,train_loss,test_loss,train_accuracy,test_accuracy,train_error,test_error
+1,0.889519,0.222416,0.742800,0.935500,0.257200,0.064500
+2,0.269758,0.152598,0.924433,0.953100,0.075567,0.046900
+3,0.210002,0.123118,0.940700,0.961100,0.059300,0.038900
+4,0.177517,0.100346,0.949583,0.967500,0.050417,0.032500
+5,0.158458,0.094922,0.955233,0.970900,0.044767,0.029100

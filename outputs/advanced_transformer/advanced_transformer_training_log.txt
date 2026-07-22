@@ -1,0 +1,44 @@
+Advanced MNIST transformer model:
+AdvancedNetTransformer(
+  (patch_embedding): Sequential(
+    (0): Conv2d(1, 48, kernel_size=(7, 7), stride=(7, 7))
+    (1): GELU(approximate='none')
+    (2): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (token_norm): LayerNorm((48,), eps=1e-05, elementwise_affine=True)
+  (transformer_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0-1): 2 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=48, out_features=48, bias=True)
+        )
+        (linear1): Linear(in_features=48, out_features=96, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=96, out_features=48, bias=True)
+        (norm1): LayerNorm((48,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((48,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (classifier): Sequential(
+    (0): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+    (1): Linear(in_features=96, out_features=128, bias=True)
+    (2): GELU(approximate='none')
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+
+Trainable parameters: 57530
+Patch size: 7
+Patch stride: 7
+Number of patch tokens: 16
+
+epoch,train_loss,test_loss,train_accuracy,test_accuracy,train_error,test_error
+1,1.072423,0.511626,0.627817,0.838000,0.372183,0.162000
+2,0.414266,0.220879,0.866267,0.927900,0.133733,0.072100
+3,0.218809,0.144307,0.932700,0.953700,0.067300,0.046300
+4,0.162491,0.115013,0.948933,0.963800,0.051067,0.036200
+5,0.133774,0.098904,0.958517,0.966900,0.041483,0.033100

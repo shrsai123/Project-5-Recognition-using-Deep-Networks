@@ -1,0 +1,30 @@
+MNIST transformer model:
+NetTransformer(
+  (patch_to_token): Linear(in_features=49, out_features=64, bias=True)
+  (transformer_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0-1): 2 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)
+        )
+        (linear1): Linear(in_features=64, out_features=128, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=128, out_features=64, bias=True)
+        (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (dropout): Dropout(p=0.1, inplace=False)
+  (fc1): Linear(in_features=64, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+epoch,train_loss,test_loss,train_accuracy,test_accuracy,train_error,test_error
+1,1.156989,0.655664,0.598117,0.780400,0.401883,0.219600
+2,0.548183,0.316628,0.819117,0.901700,0.180883,0.098300
+3,0.331945,0.209282,0.894967,0.935100,0.105033,0.064900
+4,0.245987,0.164907,0.923450,0.947900,0.076550,0.052100
+5,0.206075,0.123873,0.936300,0.959800,0.063700,0.040200

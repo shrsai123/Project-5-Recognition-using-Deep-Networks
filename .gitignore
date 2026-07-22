@@ -1,0 +1,4 @@
+data/
+__MACOSX/
+__pycache__/
+*.pyc

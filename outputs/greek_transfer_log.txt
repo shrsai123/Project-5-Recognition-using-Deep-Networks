@@ -1,0 +1,21 @@
+Greek transfer learning model:
+MyNetwork(
+  (conv1): Conv2d(1, 10, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (dropout): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=320, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=3, bias=True)
+)
+
+Class names: ['alpha', 'beta', 'gamma']
+Class to index: {'alpha': 0, 'beta': 1, 'gamma': 2}
+Number of examples: 27
+Reached target accuracy at epoch 6.
+
+epoch,train_loss,train_accuracy,eval_loss,eval_accuracy
+1,1.203260,0.407407,0.946445,0.481481
+2,0.900335,0.555556,0.663856,0.777778
+3,0.608618,0.851852,0.507271,0.962963
+4,0.608432,0.814815,0.420693,0.962963
+5,0.443658,0.888889,0.360661,0.888889
+6,0.453400,0.888889,0.308302,1.000000
